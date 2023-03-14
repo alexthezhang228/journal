@@ -1,0 +1,37 @@
+<!--
+ * @Author: alexthezhang228 110424337+alexthezhang228@users.noreply.github.com
+ * @Date: 2023-03-12 16:08:21
+ * @LastEditors: alexthezhang228 110424337+alexthezhang228@users.noreply.github.com
+ * @LastEditTime: 2023-03-13 20:17:55
+ * @FilePath: /blog/views/component.ejs
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>compose</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include ('partials/header'); %>
+  <div class="container">
+    <h1>Compose</h1>
+    <form method="POST" action="/compose" >
+      <div class="form_content">
+        <label for="compose_title">Title</label>
+        <br>
+        <input type='text' placeholder="tell me something" name="compose_title" id="compose_title"></input>
+      </div>
+      <div class="form_content"> 
+        <label for="compose_content">Post</label>
+        <br>
+        <textarea  name="compose_content" id="compose_content"></textarea>
+      </div>
+      <button type="submit">Publish</button>
+    </form>
+  </div>  
+  <%- include('partials/footer'); -%>
+</body>

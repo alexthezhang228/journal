@@ -1,0 +1,41 @@
+<!--
+ * @Author: alexthezhang228 110424337+alexthezhang228@users.noreply.github.com
+ * @Date: 2023-03-12 14:10:27
+ * @LastEditors: alexthezhang228 110424337+alexthezhang228@users.noreply.github.com
+ * @LastEditTime: 2023-03-14 08:32:05
+ * @FilePath: /blog/views/home.ejs
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Journal</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include ('partials/header'); %>
+  <div class="container">
+    <div class="journal">
+      <h1>Home</h1>
+      <p><%= homeStart %> </p>
+    </div>
+    <% posts.forEach(function(post){ %>
+    <div class="journal">
+      <h1><%= post.title %></h1>
+      <p><%= post.content.substring(0,100)+'...' %>
+        <a href="/posts/<%=post.title%>">Read More</a>
+      </p>
+    </div>
+    <% }) %>
+  </div>
+  <%- include('partials/footer'); -%>
+  
+</body>
+</html>
+  
+
+  
